@@ -52,20 +52,19 @@ function readDataPCI ()  {
     
 readDataPCI();
 
-//Setting variables to use in the website
-// let countryName=data.map(info=>info.country_name);
-// let 2011PCI=dataPCI.map(info=>info.2011_pci);
-// let 2014PCI=dataPCI.map(info=>info.2014_pci);
-// let 2017PCI=dataPCI.map(info=>info.2017_pci);
-
-// let samples=data.samples
 
 
 //The above code results in the correct population of lists to plug into the graph. 
 //But how do I plug them int othe graph? A tag in the html? ugh. 
 
+//Looks like the canvas library is generally executed in JS within the HTML file! This is weird, eh?
+
 //I tried to consolidate the above code into the template code from canvas below
 // but still no luck. Doesn't populate. :(
+
+//This is the canvas html tags...how do they fit in? I now have a box in second_try
+/* <div><script>
+    var c = document.getElementById("myCanvas");</div> */
 
 
         
