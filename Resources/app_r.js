@@ -3,14 +3,34 @@
 
 // Create a function to pull in the json data
 // Using 'd3.json' gather the metadata for each sample
-d3.json('mergerd_tables.json').then((mergerd_tables)=>{
-    var id=mergerd_tables.Country%20name;
-    console.log(mergerd_tables.metadata);
+d3.json('Mergerd_table.json').then((Mergerd_table)=>{
+    var id=Mergerd_table.Country%20name;
+    console.log(Mergerd_table.metadata);
 
     var select=d3.selectAll('#ZZZZZZt');;
 
-    country.forEach((v)=>{
+    Country%20name.forEach((v)=>{
         select.append('option').text(v).property("value",v);
     })   
 
-    
+    firstcountry=Country%20name[0]
+    makePlot(firstcountry)
+    updateMeta(firstcountry)
+})   
+
+// Update metadata
+function updateMeta(Country%20name){
+    // read in the data file 
+    d3.json('mergerd_tables.json').then((Mergerd_table)=>{
+        var meta=Mergerd_table.metadata;
+        // Take the country and filter the variable meta
+        var results = meta.filter(newData => newData.Country%20name == Country%20name)[0]
+        // With the filtered results post them in the #sample-metadata div
+        var metadata=d3.selectAll('#sample-metadata');;    
+        metadata.html("");
+        // Show all the meta data
+        Object.entries(results).forEach(([key, value]) => {
+            metadata.append("p").text(`${key}: ${value}`);
+        })
+    })
+}
