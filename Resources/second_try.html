@@ -17,9 +17,9 @@ window.onload = function () {
                     let x2014PCI=data[i].x2014_pci;
                     let x2017PCI=data[i].x2017_pci;
         
-                    let listElement2011 = {y:data[i].x2011_pci, label: data[i].country_name};
-                    let listElement2014 = {y:data[i].x2014_pci, label: data[i].country_name};
-                    let listElement2017 = {y:data[i].x2017_pci, label: data[i].country_name};
+                    let listElement2011 = {y:parseInt(data[i].x2011_pci), label: data[i].country_name};
+                    let listElement2014 = {y:parseInt(data[i].x2014_pci), label: data[i].country_name};
+                    let listElement2017 = {y:parseInt(data[i].x2017_pci), label: data[i].country_name};
         
                     x2011List.push(listElement2011);
                     x2014List.push(listElement2014);
@@ -34,12 +34,14 @@ window.onload = function () {
 		let topSlice2014=x2014List.slice(0,10);
 		let topSlice2017=x2017List.slice(0,10);
 		
+	
+
 		let bottomSlice2011=x2011List.slice(174,184);
 		let bottomSlice2014=x2014List.slice(174,184);
-		let bottomSlice2014=x2014List.slice(174,184);
+		let bottomSlice2017=x2017List.slice(174,184);
 
 
-		console.log(topSlice2011);
+		console.log(topSlice2011.y);
 	var chart = new CanvasJS.Chart("chartContainer", {
 		animationEnabled: true,
 		title:{
@@ -112,10 +114,79 @@ window.onload = function () {
 
 	//this is where I put in the bottom ten chart
 	
+	var chart = new CanvasJS.Chart("chartContainer", {
+		animationEnabled: true,
+		title:{
+			text: "Per Capita Income, years 2011, 2014, 2017 (top ten)"
+		},
+		axisY: {
+			title: "Years",
+			includeZero: true
+		},
+		legend: {
+			cursor:"pointer",
+			itemclick : toggleDataSeries
+		},
+		toolTip: {
+			shared: true,
+			content: toolTipFormatter
+		},
+		data: [{
+			type: "bar",
+			showInLegend: true,
+			name: "2011",
+			color: "gold",
+			dataPoints: topSlice2011
+		
+		},
+		{
+			type: "bar",
+			showInLegend: true,
+			name: "2014",
+			color: "silver",
+			dataPoints: topSlice2014
+		},
+		{
+			type: "bar",
+			showInLegend: true,
+			name: "2017",
+			color: "#A57164",
+			dataPoints: topSlice2017
+		}]
+	});
+	chart.render();
+
+	function toolTipFormatter(e) {
+		var str = "";
+		var total = 0 ;
+		var str3;
+		var str2 ;
+		for (var i = 0; i < e.entries.length; i++){
+			var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
+			total = e.entries[i].dataPoint.y + total;
+			str = str.concat(str1);
+		}
+		str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
+		str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
+		return (str2.concat(str)).concat(str3);
+	}
+
+	function toggleDataSeries(e) {
+		if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		}
+		else {
+			e.dataSeries.visible = true;
+		}
+		chart.render();
+
+
+		}
+	};
 
 
 
-}
+
 
 </script>
 </head>
