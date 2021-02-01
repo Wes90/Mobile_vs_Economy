@@ -20,12 +20,12 @@ d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
 })   
 
 // Update metadata
-function updateMeta(Country%20name){
+function updateMeta(Country_name){
     // read in the data file 
     d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
         var meta=merged_normalized_data.metadata;
         // Take the country and filter the variable meta
-        var results = meta.filter(newData => newData.Country%20name == Country%20name)[0]
+        var results = meta.filter(newData => newData.Country_name == Country_name)[0]
         // With the filtered results post them in the #sample-metadata div
         var metadata=d3.selectAll('#sample-metadata');;    
         metadata.html("");
@@ -37,24 +37,35 @@ function updateMeta(Country%20name){
 }
 
 // Define the source of the data and make the charts
-function makePlot(Country%20name){
-    d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
-        // create an array
-        var country=merged_normalized_data.samples;
-        var testNum=samples.map(row=>row.id).indexOf(testId);
 
-        // Define the bar chart
-        var otuValueTen=samples.map(row=>row.sample_values);
-        var otuValueTen=otuValueTen[testNum].slice(0,10).reverse();
-        var otuIdTen=samples.map(row=>row.otu_ids);
-        var otuIdTen=otuIdTen[testNum].slice(0,10);
-        var otuLabelTen=samples.map(row=>row.otu_labels); 
-        var otuLabelTen=otuLabelTen[testNum].slice(0,10); 
-        var trace={
-            x: otuValueTen,
-            y: otuIdTen.map(r=>`UTO ${r}`),
-            text: otuLabelTen,
-            type:'bar',
-            orientation:'h'
+// Define the bubble chart
+var otuValue=merged_normalized_data.map(row=>row.sample_values);
+var otuValue=otuValue[testNum];
+var otuId=merged_normalized_data.map(row=>row.otu_ids);
+var otuId=otuId[testNum];
+var otuLabel=merged_normalized_data.map(row=>row.otu_labels); 
+var otuLabel=otuLabel[testNum];
+var minIds=d3.min(otuId);
+var maxIds=d3.max(otuId);
+var mapNr = d3.scaleLinear().domain([minIds, maxIds]).range([0, 1]);
+var bubbleColors = otuId.map( val => d3.interpolateRgbBasis(["royalblue", "greenyellow", "goldenrod"])(mapNr(val)));
+var trace1={
+    x: otuId,
+    y: otuValue,
+    text: otuLabel,
+    mode: 'markers',
+    type: 'scatter'
+    }
+};
+var data1=[trace1];
+var Layout={
+    xaxis:{
+        range: [0,1.5],
+        title: {
+            text: 'OTU ID'
         }
-        Plotly.newPlot('bar',[trace]);
+    },
+};
+Plotly.newPlot('bubble',data1,bubbleLayout); 
+})
+}
