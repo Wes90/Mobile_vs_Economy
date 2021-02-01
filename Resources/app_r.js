@@ -21,6 +21,9 @@ d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
 
 // Update metadata
 function updateMeta(Country_name){
+    name: '2011'
+    text: countryLabel,
+    textposition: 'top center',
     // read in the data file 
     d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
         var meta=merged_normalized_data.metadata;
@@ -38,34 +41,30 @@ function updateMeta(Country_name){
 
 // Define the source of the data and make the charts
 
-// Define the bubble chart
-var otuValue=merged_normalized_data.map(row=>row.sample_values);
-var otuValue=otuValue[testNum];
-var otuId=merged_normalized_data.map(row=>row.otu_ids);
-var otuId=otuId[testNum];
-var otuLabel=merged_normalized_data.map(row=>row.otu_labels); 
-var otuLabel=otuLabel[testNum];
-var minIds=d3.min(otuId);
-var maxIds=d3.max(otuId);
-var mapNr = d3.scaleLinear().domain([minIds, maxIds]).range([0, 1]);
-var bubbleColors = otuId.map( val => d3.interpolateRgbBasis(["royalblue", "greenyellow", "goldenrod"])(mapNr(val)));
-var trace1={
-    x: otuId,
-    y: otuValue,
-    text: otuLabel,
-    mode: 'markers',
-    type: 'scatter'
-    }
-};
-var data1=[trace1];
-var Layout={
-    xaxis:{
-        range: [0,1.5],
-        title: {
-            text: 'OTU ID'
+    // Define the bubble chart
+    var ao=merged_normalized_data.map(row=>row.2011_AO);
+    var subs=merged_normalized_data.map(row=>row.2011_SUBS);
+    var countryLabel=merged_normalized_data.map(row=>row.Country_name); 
+    var trace1={
+        x: subs,
+        y: ao,
+        mode: 'markers+text',
+        type: 'scatter'
+        name: '2011'
+        text: [Country_name]
+    };
+    var data1=[trace1];
+    var Layout={
+        xaxis:{
+            range: [0,1.5],
+            title: {
+                text: 'Percent of Population with Mobile Subscriptions'
+            }
+        },
+        yaxis: {
+            range: [0,1],
+            text: '% of population >15 YO w/ banking services'
         }
-    },
-};
-Plotly.newPlot('bubble',data1,bubbleLayout); 
-})
-}
+    };
+    Plotly.newPlot('XXXX',data1,Layout); 
+    
