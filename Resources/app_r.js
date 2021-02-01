@@ -23,7 +23,7 @@ d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
 function updateMeta(Country_name){
     name: '2011'
     text: countryLabel,
-    textposition: 'top center',
+    textposition; 'top center',
     // read in the data file 
     d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
         var meta=merged_normalized_data.metadata;
@@ -49,9 +49,10 @@ function updateMeta(Country_name){
         x: subs,
         y: ao,
         mode: 'markers+text',
-        type: 'scatter'
-        name: '2011'
-        text: [Country_name]
+        type: 'scatter',
+        name: '2011',
+        text: data['Country_name'],
+        // hover data = ['Country_name']
     };
     var data1=[trace1];
     var Layout={
