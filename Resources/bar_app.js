@@ -1,5 +1,5 @@
 
-	d3.csv("Mergerd_table_top_bottom.csv").then(function(data){ 
+	d3.csv("Merged_table_top_bottom.csv").then(function(data){ 
 
        
         var listElementPCI = {y:data[0].x2011_pci, label: data[0].country_name};
@@ -115,9 +115,21 @@
     function buildChart(myDiv, topSlice2011PCI, topSlice2014PCI, topSlice2017PCI, title){
             
         console.log("myDiv", myDiv);
+
+        CanvasJS.addColorSet("greenShades",
+                [//colorSet Array
+
+                // "#2F4F4F",
+                "#008080",
+                "#2E8B57",
+                // "#3CB371",
+                "#90EE90"                
+                ]);
     
         var chart = new CanvasJS.Chart(myDiv, {
             animationEnabled: true,
+            theme: "dark2",
+            colorSet: "greenShades",
             title:{
                 text: title
             },
@@ -137,7 +149,7 @@
                 type: "bar",
                 showInLegend: true,
                 name: "2011",
-                color: "gold",
+                // color: "#6D78AD",
                 dataPoints: topSlice2011PCI
             
             },
@@ -145,14 +157,14 @@
                 type: "bar",
                 showInLegend: true,
                 name: "2014",
-                color: "silver",
+                // color: "silver",
                 dataPoints: topSlice2014PCI
             },
             {
                 type: "bar",
                 showInLegend: true,
                 name: "2017",
-                color: "#A57164",
+                // color: "#51CDA0",
                 dataPoints: topSlice2017PCI
             }]
             

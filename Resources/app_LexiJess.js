@@ -4,7 +4,7 @@
 //     console.log(data)});
 
 function readDataPCI ()  {
-    d3.csv("data-per_capita_income.csv").then(function(data){ 
+    d3.csv("Merged_table_top_bottom.csv").then(function(data){ 
         console.log(data)
 
        
@@ -22,14 +22,20 @@ function readDataPCI ()  {
                     let listElement2011 = {y:data[i].x2011_pci, label: data[i].country_name};
                     let listElement2014 = {y:data[i].x2014_pci, label: data[i].country_name};
                     let listElement2017 = {y:data[i].x2017_pci, label: data[i].country_name};
-        
+                    
+                    
                     x2011List.push(listElement2011);
                     x2014List.push(listElement2014);
                     x2017List.push(listElement2017);
+
+                    let sliced2011=x2011List.slice(0,10);
+                    let sliced2014=x2014List.slice(0,10);
+                    let sliced2017=x2011List.slice(0,10);
         
         console.log(countryName);
         console.log(x2011PCI);
         console.log(x2011List);
+        console.log(sliced2011);
         }   
             
             
