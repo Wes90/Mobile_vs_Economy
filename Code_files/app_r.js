@@ -3,15 +3,19 @@
 
 // Create a function to pull in the json data
 // Using 'd3.json' gather the metadata for each sample
-d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
-    var id=merged_normalized_data.Country_name;
-    console.log(merged_normalized_data.metadata);
+d3.csv('Resources/merged_normalized_data.csv').then((merged_normalized_data)=>{
+    // var countryName=merged_normalized_data.Country_name;
+    
+    console.log(merged_normalized_data);
 
     //select the drop down menu
     var select=d3.selectAll('#selDataset');;
-
-    Country_name.forEach((v)=>{
-        select.append('option').text(v).property("value",v);
+    
+    // An array for country name
+    Country_name=[]
+    merged_normalized_data.forEach((v)=>{
+        Country_name.push(v.Country_name);
+        console.log(v.Country_name)
     })   
 
     firstcountry=Country_name[0]
@@ -21,11 +25,8 @@ d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
 
 // Update metadata
 function updateMeta(Country_name){
-    name: '2011'
-    text: countryLabel,
-    textposition; 'top center',
     // read in the data file 
-    d3.json('merged_normalized_data.json').then((merged_normalized_data)=>{
+    d3.csv('Resources/merged_normalized_data.csv').then((merged_normalized_data)=>{
         var meta=merged_normalized_data.metadata;
         // Take the country and filter the variable meta
         var results = meta.filter(newData => newData.Country_name == Country_name)[0]
@@ -40,14 +41,23 @@ function updateMeta(Country_name){
 }
 
 // Define the source of the data and make the charts
+function makePlot(country){
+    d3.csv('Resources/merged_normalized_data.csv').then((merged_normalized_data)=>{
+        // create an array
+        var merged_normalized_data=merged_normalized_data.merged_normalized_data;
+        var countryName=merged_normalized_data.map(row=>row.Country_name).indexOf(country);
 
     // Define the chart
-    var ao=merged_normalized_data.map(row=>row.x2011_AO);
-    var subs=merged_normalized_data.map(row=>row.x2011_SUBS);
+    var ao_2011=merged_normalized_data.map(row=>row.x2011_AO);
+    var subs_2011=merged_normalized_data.map(row=>row.x2011_SUBS);
+    var ao_2014=merged_normalized_data.map(row=>row.x2014_AO);
+    var subs_2014=merged_normalized_data.map(row=>row.x2014_SUBS);
+    var ao_2017=merged_normalized_data.map(row=>row.x2017_AO);
+    var subs_2017=merged_normalized_data.map(row=>row.x2017_SUBS);
     var countryLabel=merged_normalized_data.map(row=>row.Country_name); 
     var trace1={
-        x: subs,
-        y: ao,
+        x: [subs_2011, subs_2014, subs_2017],
+        y: [ao_2011, ao_2014, ao_2017], 
         mode: 'markers+text',
         type: 'scatter',
         name: '2011',
@@ -68,8 +78,9 @@ function updateMeta(Country_name){
         }
     };
     Plotly.newPlot('scatter_country',data1,Layout); 
-
-    var trace2={
+    })
+}
+    //var trace2={
         x: [x2011_SUBS],
         y: [x2011_AO],
         mode: 'markers+text',
