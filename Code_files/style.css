@@ -1,0 +1,20 @@
+body    {background-color: grey;}
+
+.navbar-brand {
+    
+    font-family:cursive;
+}
+.nav-link {
+    font-family: cursive;
+}
+.col-md-12 {
+    color:rgba(248, 85, 248, 0.993); 
+     
+    font-family: fantasy;
+     
+}
+
+h1 {
+    font-size: 400%; 
+}
+
