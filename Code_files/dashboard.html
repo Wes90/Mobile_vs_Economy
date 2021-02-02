@@ -41,7 +41,7 @@
     <div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h5></h5>
+          <h5>Select a country</h5>
           <select class="form-select" aria-label="Default select example" id="selDataset" onchange="optionChanged(this.value)">
             <option value=""></option>
 
@@ -57,12 +57,29 @@
       </div>
       </div>
       <div class="col-md-5">
-        <div id="scatter"></div>
+        <div id="scatter_2011"></div>
       </div>
       <div class="col-md-5">
-        <div id="bubble"></div>
+        <div id="scatter_2014"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="scatter_2017"></div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+          <h5>Select a country</h5>
+          <select class="form-select" aria-label="Default select example" id="selDataset" onchange="optionChanged(this.value)">
+            <option value=""></option>
+
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="col-md-5">
+        <div id="scatter_country"></div>
+      </div>
     <div class="row">
       <div class="col-md-12">
         <div id="geograph"></div>
