@@ -8,18 +8,31 @@ body    {background-color: grey;}
     font-family: cursive;
 }
 
-h1 {
-    color: rgba(170, 155, 23, 0.993); 
+#header {
+    font: x-large;
+    color: rgba(231, 210, 17, 0.993); 
     font-family: fantasy;  
 }
 
-.display-1 {
+#jumbo_header {
+    font-family:fantasy;
+    font-size:xx-large; 
+    color:  rgba(16, 229, 236, 0.993);
     
+     
 }
 
 
-p {
+#p1 {
+    
     color: rgb(237, 242, 245);
     font-size: large;
     
+ }
+ 
+
+ #p2 {
+    color: rgb(237, 242, 245);
+    font-size: large;
+
  }
