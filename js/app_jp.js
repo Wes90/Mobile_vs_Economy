@@ -25,10 +25,10 @@ var svg = d3
 var circRadius;
 function crGet() {
   if (width <= 100) {
-    circRadius = 10;
+    circRadius = 9;
   }
   else {
-    circRadius = 10;
+    circRadius = 9;
   }
 }
 crGet();
