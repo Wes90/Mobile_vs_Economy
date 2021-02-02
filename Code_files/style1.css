@@ -16,7 +16,6 @@ body    {background-color: grey;}
 
 #jumbo_header {
     font-family:fantasy;
-    font-size:xx-large; 
     color:  rgba(16, 229, 236, 0.993);
     
      
@@ -36,3 +35,31 @@ body    {background-color: grey;}
     font-size: large;
 
  }
+
+ #phone1 { 
+     position:absolute;
+     left:20px;
+     top:250px
+ }
+
+ #family { 
+    position:absolute;
+    right:20px;
+    top:250px
+}
+
+#selfie {
+    position:absolute;
+    right:700px;
+    bottom:50px
+}
+
+#earth {
+    position:absolute;
+    left:300px;
+    bottom:150px
+}
+
+section {
+    background-image: "images/earth.jpg";
+}
