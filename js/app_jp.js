@@ -239,7 +239,7 @@ function visualize(theData) {
   // Make grouping for our dots and their labels.
   var theCircles = svg.selectAll("g theCircles").data(theData).enter();
 
-  // Append the circles for each row of data (or each country, in this case).
+  // Append the circles for each row of data aka country
   theCircles
     .append("circle")
     // These attr's specify location, size and class.
@@ -268,10 +268,10 @@ function visualize(theData) {
     });
 
   d3.selectAll(".aText").on("click", function() {
-    // Make sure to save a selection of the clicked text so can reference it without typing out the invoker each time.
+    // Save a selection of the clicked text 
     var self = d3.select(this);
 
-    // Only want to run this on inactive labels.
+    // Run this on inactive labels.
     if (self.classed("inactive")) {
       // Grab the name and axis saved in label.
       var axis = self.attr("data-axis");
@@ -291,9 +291,9 @@ function visualize(theData) {
         // Use a transition when we update the xAxis.
         svg.select(".xAxis").transition().duration(750).call(xAxis);
 
-        // With the axis changed, let's update the location of the country circles.
+        // With the axis changed, update the location of the country circles
         d3.selectAll("circle").each(function() {
-          // Each country circle gets a transition for it's new attribute.
+          // Each country circle gets a transition for it's new attribute
           d3
             .select(this)
             .transition()
@@ -303,9 +303,9 @@ function visualize(theData) {
             .duration(750);
         });
 
-        // Need to change the location of the country texts, too.
+        // Need to change the location of the country texts
         d3.selectAll(".Country_nameText").each(function() {
-          // We give each country text the same motion tween as the matching circle.
+          // We give each country text the same motion as the matching circle.
           d3
             .select(this)
             .transition()
@@ -314,11 +314,11 @@ function visualize(theData) {
             })
             .duration(750);
         });
-        // Finally, change the classes of the last active label and the clicked label.
+        // Change the classes of the last active label and the clicked label.
         labelChange(axis, self);
       }
       else {
-        // When y is the saved axis, execute this:
+        // When y is the saved axis, execute:
         curY = name;
         yMinMax();
         yScale.domain([yMin, yMax]);
@@ -348,7 +348,7 @@ function visualize(theData) {
             })
             .duration(750);
         });
-        // Finally, change the classes of the last active label and the clicked label.
+        // Change the classes of the last active label and clicked label
         labelChange(axis, self);
       }
     }
