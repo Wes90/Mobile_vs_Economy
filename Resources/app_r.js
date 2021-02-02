@@ -56,6 +56,8 @@ function updateMeta(Country_name){
     };
     var data1=[trace1];
     var Layout={
+        plot_bgcolor:"black",
+        paper_bgcolor:"#FFF3",
         xaxis:{
             range: [0,1.5],
             title: {
