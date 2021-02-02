@@ -21,7 +21,7 @@ var svg = d3
   .attr("height", height)
   .attr("class", "chart");
 
-// Set the radius for each dot in graph
+// Set the radius for each circle
 var circRadius;
 function crGet() {
   if (width <= 100) {
@@ -132,7 +132,7 @@ d3.csv("/Resources/data/Mergerd_table.csv").then(function(data) {
 // Visualize function on the data obtained with d3's .csv method
 function visualize(theData) {
   // CurX and curY will determine what data gets represented in each axis.
-  // Designate defaults here, which carry the same names as the headings in their matching .csv data file.
+  // Designate defaults here, which names match headings in .csv file
   var curX = "2011_PCI"; "2014_PCI"; "2017_PCI";
   var curY = "2011_AO"; "2014_AO"; "2017_AO";
 
@@ -154,7 +154,7 @@ function visualize(theData) {
         theX = "<div>" + curX + ": " + d[curX] + "$</div>";
       }
       else {
-      // Grab the x key and a version of the value formatted to include commas after every third digit.
+      // Grab the x key and a version of the value formatted to include commas after every third digit
         theX = "<div>" +
           curX +
           ": " +
@@ -337,9 +337,9 @@ function visualize(theData) {
             })
             .duration(750);
         });
-        // Need to change the location of the country texts, too.
+        // Need to change the location of the country texts, too
         d3.selectAll(".Country_nameText").each(function() {
-          // Give each country text the same motion as the matching circle.
+          // Give each country text the same motion as the matching circle
           d3
             .select(this)
             .transition()
