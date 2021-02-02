@@ -76,10 +76,10 @@ function makePlot(country){
 
 )}
 // Review new Country
-// function optionChanged(newCountry) {
-//     // Select a new ID from the drop down menu
-//     makePlot(newId);
-// }
+function optionChanged(newCountry) {
+    // Select a new ID from the drop down menu
+    makePlot(newCountry);
+}
     // Create a cross plot of 2011 data
     // var ao_2011=merged_normalized_data.map(row=>row.x2011_AO);
     // var subs_2011=merged_normalized_data.map(row=>row.x2011_SUBS);
