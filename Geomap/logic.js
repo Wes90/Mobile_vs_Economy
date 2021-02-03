@@ -1,18 +1,18 @@
  // Referencing geojson file.
-    
+  var url = "https://raw.githubusercontent.com/Wes90/Mobile_vs_Economy/DaltonCode/Geomap/map.geojson"
   
     
  // Function that will determine the color based on the depth of the earthquake
  function chooseColor(ao) {
    if (ao > 90)
    return "red";
-   else if (depth > 70)
+   else if (ao > 70)
    return "pink";
-   else if (depth > 50)
+   else if (ao > 50)
    return "orange";
-   else if (depth > 30)
+   else if (ao > 30)
    return "yellow";
-   else if (depth >10)
+   else if (ao >10)
    return "lime";
    else
    return "green";
@@ -20,12 +20,20 @@
  
  // Function that will determine the size of marker based on the magnitute of the earthquake
    function chooseSize(pci) {
-       return (pci*300)
+     if (pci <= 6000){
+      return (pci*150) 
+     }
+     else if (pci <= 8000){
+       return (pci*50)
+     }
+     else 
+     return (pci*10)
+       
 
    }
 
    //Perform get request for the query
-   d3.json(mygeojson, function(data) 
+   d3.json(url, function(data) 
  {
    createFeatures(data.features)});
 
@@ -37,7 +45,7 @@
 
            // Called on each feature
            onEachFeature: function(feature, layer) {
-               layer.bindPopup("<h1> Account Ownership" + feature.properties.ao+ "</h2> <hr> Income Per Capita <h2>" + feature.properties.pci + "</h1> <hr> Number of Subscriptions <h2>" + feature.geometry.subs)
+               layer.bindPopup("Account Ownership <br> <h2>" + feature.properties.ao+ "</h2>" +"<hr> Income Per Capita <h2>" + feature.properties.pci + "</h2> <hr> Number of Subscriptions <h2>" + feature.properties.subs)
            },
            pointToLayer: function (feature, latlong){
                return new L.circle(latlong, {
@@ -82,7 +90,7 @@
      //Legend
      var legend = L.control({position: 'bottomright'});
 
-     legend.onAdd = function (map) {
+     legend.onAdd = function () {
      
          var infodiv = L.DomUtil.create('div', 'info legend'),
              ao = ["-10-10", "10-30", "30-50", "50-70", "70-90", "90+"],
@@ -117,7 +125,7 @@
    }).addTo(myMap);
    legend.addTo(myMap);
 
-   var geojsonLayer = L.geoJSON(mygeojson);
-   geojsonLayer.addTo(myMap);
+  //  var geojsonLayer = L.geoJSON(mygeojson);
+  //  geojsonLayer.addTo(myMap);
    
    }
