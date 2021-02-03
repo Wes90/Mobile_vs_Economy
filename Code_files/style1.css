@@ -50,16 +50,7 @@ body    {background-color: grey;}
 
 #selfie {
     position:absolute;
-    right:700px;
-    bottom:50px
+    right:25%;
+    bottom:auto
 }
 
-#earth {
-    position:absolute;
-    left:300px;
-    bottom:150px
-}
-
-section {
-    background-image: "images/earth.jpg";
-}
