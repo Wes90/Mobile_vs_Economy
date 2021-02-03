@@ -1,0 +1,65 @@
+body    {background-color: grey;}
+
+.navbar-brand {
+    
+    font-family:cursive;
+}
+.nav-link {
+    font-family: cursive;
+}
+
+#header {
+    font: x-large;
+    color: rgba(231, 210, 17, 0.993); 
+    font-family: fantasy;  
+}
+
+#jumbo_header {
+    font-family:fantasy;
+    color:  rgba(16, 229, 236, 0.993);
+    
+     
+}
+
+
+#p1 {
+    
+    color: rgb(237, 242, 245);
+    font-size: large;
+    
+ }
+ 
+
+ #p2 {
+    color: rgb(237, 242, 245);
+    font-size: large;
+
+ }
+
+ #phone1 { 
+     position:absolute;
+     left:20px;
+     top:250px
+ }
+
+ #family { 
+    position:absolute;
+    right:20px;
+    top:250px
+}
+
+#selfie {
+    position:absolute;
+    right:700px;
+    bottom:50px
+}
+
+#earth {
+    position:absolute;
+    left:300px;
+    bottom:150px
+}
+
+section {
+    background-image: "images/earth.jpg";
+}
