@@ -1,5 +1,5 @@
  // Referencing geojson file.
-  var url = "https://raw.githubusercontent.com/Wes90/Mobile_vs_Economy/DaltonCode/Geomap/map2.geojson"
+  var url = "https://raw.githubusercontent.com/Wes90/Mobile_vs_Economy/main/Map/2011/map2011.geojson"
   
     
  // Function that will determine the color based on the depth of the earthquake
@@ -26,6 +26,9 @@
      else if (pci <= 8000){
        return (pci*50)
      }
+     else if (pci <= 15000){
+      return (pci*20)
+    }
      else 
      return (pci*10)
        
@@ -45,7 +48,7 @@
 
            // Called on each feature
            onEachFeature: function(feature, layer) {
-               layer.bindPopup("<h1>"+ feature.properties.place+ "</h1> <hr>"+ "Account Ownership <br> <h2>" + feature.properties.ao+"%"+ "</h2>" +"<hr> Income Per Capita <h2>" + feature.properties.pci + "</h2> <hr> Number of Subscriptions <h2>" + feature.properties.subs)
+               layer.bindPopup("<h1>"+ feature.properties.place+ "</h1> <hr>"+ "Account Ownership <br> <h2>" + feature.properties.ao+"%"+ "</h2>" +"<hr> Income Per Capita <h2>" + feature.properties.pci +" USD" +"</h2> <hr> Number of Subscriptions <h2>" + feature.properties.subs)
            },
            pointToLayer: function (feature, latlong){
                return new L.circle(latlong, {
