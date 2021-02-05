@@ -18,3 +18,41 @@ h1 {
     font-size: 400%; 
 }
 
+#chartContainerC {
+    position: relative;
+    right:15px;
+    
+
+}
+
+#chartContainerD {
+    position: relative;
+    left: 570px;
+    bottom: 370px; 
+}
+
+#chartContainer {
+    position: absolute;
+    right: 580px;
+    bottom: 300px;
+
+}
+
+#chartContainerB {
+    position: relative;
+    left: 570px;
+    bottom: 300px;
+}
+
+#chartContainerE {
+    position: absolute;
+    right: 50%;
+    
+
+}
+
+#chartContainerF {
+    position: absolute;
+    left:50%;
+
+}
