@@ -27,7 +27,7 @@ h1 {
 
 #chartContainerD {
     position: relative;
-    left: 570px;
+    left: 550px;
     bottom: 370px; 
 }
 
@@ -39,20 +39,21 @@ h1 {
 }
 
 #chartContainerB {
-    position: relative;
-    left: 570px;
+    position: absolute;
+    left: 573px;
     bottom: 300px;
 }
 
 #chartContainerE {
-    position: absolute;
-    right: 50%;
+    position: relative;
+    top: 145px;
+    right: 20px
     
 
 }
 
 #chartContainerF {
     position: absolute;
-    left:50%;
-
+    left: 570px;
+    top: 885px 
 }
