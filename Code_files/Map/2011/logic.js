@@ -1,5 +1,5 @@
  // Referencing geojson file.
-  var url = "https://raw.githubusercontent.com/Wes90/Mobile_vs_Economy/main/Map/2011/map2011.geojson"
+  var url = "https://raw.githubusercontent.com/Wes90/Mobile_vs_Economy/main/Code_files/Map/2011/map2011.geojson"
   
     
  // Function that will determine the color based on the depth of the earthquake
@@ -31,8 +31,7 @@
     }
      else 
      return (pci*10)
-       
-
+  
    }
 
    //Perform get request for the query
