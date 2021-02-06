@@ -1,0 +1,52 @@
+body{
+  background: rgb(8, 8, 8);
+}
+
+.aText {
+  font-family: Arial;
+  font-size: 20px;
+  text-anchor: middle;
+}
+
+.active {
+  font-weight: bold;
+  fill: rgb(255, 255, 255);
+  transition: fill 0.2s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-weight: lighter;
+  fill: #c9c9c9;
+  transition: fill 0.2s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: rgb(225, 225, 225);
+  cursor: pointer;
+}
+
+.Country_nameCircle {
+  fill: #4603fcd5;
+}
+
+.chart {
+  display: block;
+  color: white;
+  margin: 0;
+}
+/* hover over box */
+.d3-tip {
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  line-height: 1.5em;
+  color: rgb(3, 3, 3);
+  text-align: center;
+  text-transform: capitalize;
+  background: rgba(247, 243, 3, 0.8);
+  border-radius: 4px;
+}
+
+
