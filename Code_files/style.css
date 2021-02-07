@@ -11,7 +11,6 @@ body    {background-color: grey;}
     color:rgba(248, 85, 248, 0.993); 
      
     font-family: fantasy;
-     
 }
 
 h1 {
@@ -56,4 +55,22 @@ h1 {
     position: absolute;
     left: 570px;
     top: 885px 
+}
+
+svg {
+    background: black;  
+}
+
+#scatter {
+    position: absolute;
+    top:200px;
+    left: 100px;
+    margin-bottom: 100px;
+} 
+
+.btn {
+    position:absolute;
+    font-family: fantasy;
+    left: 520px;
+    top: 158px
 }

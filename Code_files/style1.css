@@ -10,7 +10,7 @@ body    {background-color: grey;}
 
 #header {
     font: x-large;
-    color: rgba(231, 210, 17, 0.993); 
+    /* color: rgba(231, 210, 17, 0.993);  */
     font-family: fantasy;  
 }
 
