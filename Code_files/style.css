@@ -65,3 +65,8 @@ h1 {
     left: 520px;
     top: 158px
 }
+
+img {
+    position: relative;
+    bottom: 150px;
+}
