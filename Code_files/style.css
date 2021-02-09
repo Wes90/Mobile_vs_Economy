@@ -7,14 +7,63 @@ body    {background-color: grey;}
 .nav-link {
     font-family: cursive;
 }
-.col-md-12 {
+.fs-1 {
     color:rgba(248, 85, 248, 0.993); 
      
     font-family: fantasy;
-     
 }
 
 h1 {
     font-size: 400%; 
 }
+
+#chartContainerC {
+    position: relative;
+    right:150px;
+    
+
+}
+
+#chartContainerD {
+    position: relative;
+    left: 400px;
+    bottom: 370px; 
+}
+
+#chartContainer {
+    position: relative;
+    right: 150px;
+    bottom: 300px;
+    
+}
+
+#chartContainerB {
+    position: absolute;
+    left: 573px;
+    top: 440px;
+    left: 425px;
+}
+
+#chartContainerE {
+    position: relative;
+    right: 150px;
+    bottom: 225px;
+    
+
+}
+
+#chartContainerF {
+    position: absolute;
+    left: 425px;
+    bottom: 225px;
+}
+
+
+.btn {
+    position:absolute;
+    font-family: fantasy;
+    left: 520px;
+    top: 158px
+}
+
 

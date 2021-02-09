@@ -10,7 +10,7 @@ body    {background-color: grey;}
 
 #header {
     font: x-large;
-    color: rgba(231, 210, 17, 0.993); 
+    /* color: rgba(231, 210, 17, 0.993);  */
     font-family: fantasy;  
 }
 
@@ -50,16 +50,7 @@ body    {background-color: grey;}
 
 #selfie {
     position:absolute;
-    right:700px;
-    bottom:50px
+    right:25%;
+    bottom:auto
 }
 
-#earth {
-    position:absolute;
-    left:300px;
-    bottom:150px
-}
-
-section {
-    background-image: "images/earth.jpg";
-}

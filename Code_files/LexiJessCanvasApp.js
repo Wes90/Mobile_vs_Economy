@@ -1,5 +1,5 @@
 
-	d3.csv("Merged_table_top_bottom.csv").then(function(data){ 
+	d3.csv("LexiJess_Merged_table_top_bottom.csv").then(function(data){ 
 
        
         var listElementPCI = {y:data[0].x2011_pci, label: data[0].country_name};
