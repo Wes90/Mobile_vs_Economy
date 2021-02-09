@@ -19,7 +19,7 @@ h1 {
 
 #chartContainerC {
     position: relative;
-    right:150px;
+    right:250px;
     
 
 }
@@ -32,7 +32,7 @@ h1 {
 
 #chartContainer {
     position: relative;
-    right: 150px;
+    right: 250px;
     bottom: 300px;
     
 }
@@ -46,7 +46,7 @@ h1 {
 
 #chartContainerE {
     position: relative;
-    right: 150px;
+    right: 250px;
     bottom: 225px;
     
 
@@ -59,11 +59,16 @@ h1 {
 }
 
 
-.btn {
+#button1 {
     position:absolute;
     font-family: fantasy;
-    left: 520px;
-    top: 158px
+    right: 950px;
+    top: 148px
 }
 
+#button2 {
+    position: absolute;
+    top: 148px;
+    left: 950px;
+}
 

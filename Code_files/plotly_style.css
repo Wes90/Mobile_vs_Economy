@@ -1,0 +1,36 @@
+body{
+    background: black;
+}
+#scatter2011 {
+    position: relative;
+    width: 800px;
+    top: 100px;
+    right: 250px;
+}
+
+#scatter2014 {
+    position: relative;
+    width: 800px;
+    bottom: 350px;
+    left: 560px;
+}
+
+#scatter2017 {
+    position: relative;
+    width: 800px;
+    bottom: 300px;
+    left: 175px;
+}
+
+.well {
+    font-family:cursive;
+    position: relative;
+    bottom: 250px;
+    right: 210px;
+}
+
+#scatter_country{
+    position: relative;
+    bottom: 300px;
+}
+
