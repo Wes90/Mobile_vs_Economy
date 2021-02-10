@@ -1,6 +1,6 @@
-body{
+/* body{
   background: rgb(8, 8, 8);
-}
+} */
 
 .aText {
   font-family: Arial;
@@ -51,7 +51,15 @@ hover over box
   border-radius: 4px;
 }
 
-h1 {
+h2 {
+  color: white;
   position: relative;
-  left: 200px;
+  left: 40%;
+  top: 50px;
+}
+
+svg {
+  position: absolute;
+  left: 10%;
+  top: 50px;
 }

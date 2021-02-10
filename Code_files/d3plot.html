@@ -9,6 +9,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="Resources/assets/d3Style.css">
   <link rel="stylesheet" href="/Code_files/d3Style.css">
+  <link rel="stylesheet" href="/Code_files/style.css">
 </head>
 
 <body>
@@ -36,13 +37,20 @@
       </div>
     </div>
   </nav>
-  <style>
-    h1 {color: #fffefe;}
-  </style>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="fs-1 col-md-12 jumbotron text-center bg-dark">
+        <h1 id='jumbotron'>Dark Mode Dashboard</h1>
+        <p><a class="btn btn-warning" id="button1" href="d3plot.html" role="button">D3 PLOT</a>
+          <a class="btn btn-warning" id="button2" href="plotly.html" role="button">PLOTLY</a></p>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-9">
-        <h1>Per Capita vs. Open Bank Accounts</h1>
+        <h2 id='plot title' class='text-light'>Per Capita vs. Open Bank Accounts</h2>
       </div>
     </div>
     <div class="row">
