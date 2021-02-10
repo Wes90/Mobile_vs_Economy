@@ -172,17 +172,17 @@
          
         return chart;
     }
-        chart1=buildChart("chartContainer", topSlice2011PCI, topSlice2014PCI, topSlice2017PCI, "PCI of Countries that are Top Ten by 2017 Mobile Subscription Penetration")
+        chart1=buildChart("chartContainer", topSlice2011PCI, topSlice2014PCI, topSlice2017PCI, "Per Capita Income, Top Ten Countries")
         chart1.render()
-        chart2=buildChart("chartContainerB", bottomSlice2011PCI, bottomSlice2014PCI, bottomSlice2017PCI, "PCI of Countries that are Bottom Ten by 2017 Mobile Subscription Penetration")
+        chart2=buildChart("chartContainerB", bottomSlice2011PCI, bottomSlice2014PCI, bottomSlice2017PCI, "Per Capita Income, Bottom Ten Countries")
         chart2.render()
-        chart3=buildChart("chartContainerC", topSlice2011SUBS, topSlice2014SUBS, topSlice2017SUBS, "Number of Mobile Subscriptions in Countries that are Top Ten by 2017 Mobile Subscription Penetration")
+        chart3=buildChart("chartContainerC", topSlice2011SUBS, topSlice2014SUBS, topSlice2017SUBS, "Mobile Subscriptions, Top Ten Countries")
         chart3.render()
-        chart4=buildChart("chartContainerD", bottomSlice2011SUBS, bottomSlice2014SUBS, bottomSlice2017SUBS, "Number of Mobile Subscriptions in Countries that are Bottom Ten by 2017 Mobile Subscription Penetration")
+        chart4=buildChart("chartContainerD", bottomSlice2011SUBS, bottomSlice2014SUBS, bottomSlice2017SUBS, "Mobile Subscriptions, Bottom Ten Countries")
         chart4.render()
-        chart3=buildChart("chartContainerE", topSlice2011AO, topSlice2014AO, topSlice2017AO, "Number of Bank Accounts Ownership in Countries that are Top Ten by 2017 Mobile Subscription Penetration")
+        chart3=buildChart("chartContainerE", topSlice2011AO, topSlice2014AO, topSlice2017AO, "Bank Account Ownership, Top Ten Countries")
         chart3.render()
-        chart4=buildChart("chartContainerF", bottomSlice2011AO, bottomSlice2014AO, bottomSlice2017AO, "Number of Bank Account ownership in Countries that are Bottom Ten by 2017 Mobile Subscription Penetration")
+        chart4=buildChart("chartContainerF", bottomSlice2011AO, bottomSlice2014AO, bottomSlice2017AO, "Bank Account Ownership, Bottom Ten Countries")
         chart4.render()
 	});
 	
